@@ -189,16 +189,36 @@ These patterns degrade output quality and must be actively avoided:
 
 ## Output Quality Score
 
-Before finalizing, mentally score the response:
+Before finalizing, mentally score the response along the five dimensions. Two concepts are involved — keep them separate:
 
-| Dimension | Weight | Check |
-|---|---|---|
-| Accuracy | 30% | No fabrications, proper confidence markers |
-| Completeness | 25% | All questions addressed |
-| Clarity | 20% | Readable, concrete, unambiguous |
-| Structure | 15% | Organized, appropriate format |
-| Calibration | 10% | Confidence matches certainty |
+- **Weight** = how much each dimension matters when tie-breaking or prioritizing fixes (importance).
+- **Score** = how well this specific response performs on that dimension, from 0–100 (quality).
 
-**Target: no dimension below 80% quality.**
+### Weights (importance)
 
-If any dimension fails, revise before sending.
+Use these weights only for deciding *which* dimension to fix first when time is limited — fix the highest-weighted failing dimension first.
+
+| Dimension    | Weight | What it governs |
+|--------------|:------:|---|
+| Accuracy     | 30     | No fabrications, proper confidence markers |
+| Completeness | 25     | All questions addressed |
+| Clarity      | 20     | Readable, concrete, unambiguous |
+| Structure    | 15     | Organized, appropriate format |
+| Calibration  | 10     | Confidence matches certainty |
+
+*(Weights sum to 100 and reflect relative importance — not a quality target.)*
+
+### Scores (quality)
+
+For each dimension, give the response a rough 0–100 score:
+
+| Score range | Meaning                                         | Action          |
+|-------------|-------------------------------------------------|-----------------|
+| 90–100      | Strong — clearly meets the standard             | None            |
+| 80–89       | Acceptable — minor polish possible              | Optional tweak  |
+| 60–79       | Weak — the dimension is under-served            | Revise          |
+| < 60        | Failing — the response should not ship as-is    | Rebuild section |
+
+### Gate for delivery
+
+**No dimension scores below 80.** If any dimension scores below 80, revise before sending. When multiple dimensions fail and you must choose, fix the one with the highest **weight** first.

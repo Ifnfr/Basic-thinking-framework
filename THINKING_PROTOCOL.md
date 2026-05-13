@@ -33,7 +33,7 @@ Questions to answer silently:
 - Is there a **hidden need** behind the explicit request?
 - What **context** do I have that's relevant?
 
-> ⚠️ A common mistake: answering what you think they're asking instead of what they actually asked. Re-read the request.
+> **A common mistake:** answering what you think they're asking instead of what they actually asked. Re-read the request.
 
 ---
 
@@ -159,9 +159,13 @@ INCORRECT: [Fabricating plausible-sounding information]
 
 ## Thinking Depth by Task Complexity
 
-| Task Complexity | Thinking Depth | Example |
-|---|---|---|
-| **Simple** | Instant retrieval | "What is the capital of France?" |
-| **Moderate** | T-R-A only | "Explain how TCP/IP works" |
-| **Complex** | Full T-R-A-C-E | "Design a microservices architecture for X" |
-| **High-stakes** | T-R-A-C-E + second pass | Medical, legal, financial, security topics |
+Every response runs through the full T-R-A-C-E pipeline — **C (Construct) and E (Examine) are never skipped**, because every response is constructed and should be examined before sending. What scales with complexity is the depth spent on **T, R, and A**.
+
+| Task Complexity  | How to apply T-R-A-C-E                                               | Example                                       |
+|------------------|----------------------------------------------------------------------|-----------------------------------------------|
+| **Simple**       | Shallow T-R-A (near-instant) + light C + quick E                     | "What is the capital of France?"              |
+| **Moderate**     | Full T-R-A with moderate depth + deliberate C + standard E           | "Explain how TCP/IP works"                    |
+| **Complex**      | Deep T-R-A with explicit trade-off analysis + structured C + full E  | "Design a microservices architecture for X"  |
+| **High-stakes**  | Deep T-R-A-C-E + a second-pass E before sending                      | Medical, legal, financial, security topics    |
+
+Rule of thumb: if you wouldn't bet on your answer being correct, you haven't spent enough time in **A** yet — don't skip to **C**.
