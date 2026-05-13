@@ -2,6 +2,8 @@
 
 A structured pre-delivery review process. Run this before finalizing any response.
 
+> This file is the **canonical source of truth** for self-evaluation items used by the framework. `SYSTEM_PROMPT.md` Phase 4 references this file rather than duplicating the list.
+
 ---
 
 ## How to Use This Checklist

@@ -1,79 +1,93 @@
-# 🧠 AI Processing Framework
+# AI Processing Framework
 
-> A structured framework for AI systems to process information carefully and produce comprehensive, high-quality outputs.
+A structured framework for AI systems to process information carefully and produce comprehensive, high-quality outputs.
 
 ---
 
-## 📋 Overview
+## Overview
 
 This framework provides a systematic approach for AI models to:
+
 - **Intake** and validate information rigorously
 - **Reason** through problems with structured thinking
 - **Generate** outputs that are comprehensive, accurate, and well-organized
 - **Self-evaluate** before delivering results
 
+It is model-agnostic. You can use it with any LLM that accepts a system prompt.
+
 ---
 
-## 📁 Repository Structure
+## Repository Structure
+
+The repository is flat — all files live at the root.
 
 ```
-ai-processing-framework/
-│
+Basic-thinking-framework/
 ├── README.md                        ← You are here
+├── LICENSE
 │
-├── core/
-│   ├── SYSTEM_PROMPT.md             ← Master system prompt template
-│   ├── THINKING_PROTOCOL.md         ← Step-by-step reasoning protocol
-│   └── OUTPUT_STANDARDS.md          ← Output quality standards
+├── Core
+│   ├── SYSTEM_PROMPT.md             ← Master system prompt (copy/paste ready)
+│   ├── THINKING_PROTOCOL.md         ← T-R-A-C-E reasoning protocol
+│   └── OUTPUT_STANDARDS.md          ← Five dimensions of output quality
 │
-├── modules/
-│   ├── INPUT_ANALYSIS.md            ← Input parsing & validation rules
-│   ├── KNOWLEDGE_SYNTHESIS.md       ← Knowledge integration guidelines
-│   ├── UNCERTAINTY_HANDLING.md      ← How to handle gaps & ambiguity
-│   └── SELF_EVALUATION.md           ← Pre-output quality checklist
+├── Modules
+│   ├── UNCERTAINTY_HANDLING.md      ← Handling gaps, ambiguity, outdated info
+│   └── SELF_EVALUATION.md           ← Pre-delivery checklist
 │
-├── templates/
-│   ├── GENERAL_RESPONSE.md          ← General purpose response template
+├── Templates
+│   ├── GENERAL_RESPONSE.md          ← General-purpose response shape
 │   ├── ANALYTICAL_REPORT.md         ← For deep analysis tasks
-│   ├── PROBLEM_SOLVING.md           ← For debugging / problem solving
+│   ├── PROBLEM_SOLVING.md           ← For debugging / troubleshooting
 │   └── RESEARCH_SYNTHESIS.md        ← For research & summarization
 │
-└── examples/
+└── Examples
     ├── example_complex_query.md
     └── example_ambiguous_input.md
 ```
 
+> The "Core / Modules / Templates / Examples" groupings above are **logical**, not directory-based. All files are at the repo root.
+
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
-### For Direct Use (System Prompt)
-Copy the contents of [`core/SYSTEM_PROMPT.md`](core/SYSTEM_PROMPT.md) into your AI system prompt.
+### Option 1 — Direct use as a system prompt
 
-### For Custom Integration
-1. Select relevant **modules** based on your use case
-2. Pick a **template** that matches your output format
-3. Combine them into a single system prompt
+Copy the contents of [`SYSTEM_PROMPT.md`](./SYSTEM_PROMPT.md) into your model's system prompt field. That's it.
 
-### For API Integration
+### Option 2 — Custom composition
+
+1. Start from [`SYSTEM_PROMPT.md`](./SYSTEM_PROMPT.md) as the base.
+2. Append the modules that match your use case (e.g. [`UNCERTAINTY_HANDLING.md`](./UNCERTAINTY_HANDLING.md) for research-heavy workflows).
+3. Append a template (e.g. [`ANALYTICAL_REPORT.md`](./ANALYTICAL_REPORT.md)) if you want responses to follow a specific shape.
+
+### Option 3 — API integration
+
+The snippet below is **illustrative**. Replace the model identifier and client library with whatever provider you use. Paths below assume you run the script from the repository root.
+
 ```python
-import anthropic
+from pathlib import Path
 
-with open("core/SYSTEM_PROMPT.md", "r") as f:
-    system_prompt = f.read()
+# Adjust the model name to a valid model you have access to.
+MODEL_NAME = "your-model-id-here"
 
-client = anthropic.Anthropic()
-response = client.messages.create(
-    model="claude-sonnet-4-20250514",
-    max_tokens=8192,
-    system=system_prompt,
-    messages=[{"role": "user", "content": your_query}]
-)
+system_prompt = Path("SYSTEM_PROMPT.md").read_text(encoding="utf-8")
+
+# Example with the Anthropic SDK (replace with your provider's client):
+# import anthropic
+# client = anthropic.Anthropic()
+# response = client.messages.create(
+#     model=MODEL_NAME,
+#     max_tokens=8192,
+#     system=system_prompt,
+#     messages=[{"role": "user", "content": user_query}],
+# )
 ```
 
 ---
 
-## 🧩 Core Principles
+## Core Principles
 
 | Principle | Description |
 |-----------|-------------|
@@ -85,6 +99,17 @@ response = client.messages.create(
 
 ---
 
-## 📄 License
+## How the Pieces Fit Together
 
-MIT License — free to use, modify, and distribute.
+1. [`SYSTEM_PROMPT.md`](./SYSTEM_PROMPT.md) installs the baseline behavior (four phases: Parse, Reason, Construct, Evaluate).
+2. [`THINKING_PROTOCOL.md`](./THINKING_PROTOCOL.md) is the internal reasoning pipeline (T-R-A-C-E) that runs inside Phase 2.
+3. [`OUTPUT_STANDARDS.md`](./OUTPUT_STANDARDS.md) defines the five quality dimensions used in Phase 3.
+4. [`SELF_EVALUATION.md`](./SELF_EVALUATION.md) is the canonical pre-delivery checklist used in Phase 4.
+5. [`UNCERTAINTY_HANDLING.md`](./UNCERTAINTY_HANDLING.md) is pulled in whenever a response touches unknowns, ambiguity, or outdated information.
+6. The four **templates** shape the final output format for common response types.
+
+---
+
+## License
+
+[MIT License](./LICENSE) — free to use, modify, and distribute.

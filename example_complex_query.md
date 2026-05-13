@@ -9,7 +9,7 @@ This example demonstrates how the framework processes a multi-part, complex quer
 ```
 "We're building a SaaS product for small businesses. We're debating between 
 a monolithic architecture and microservices. We have a team of 4 engineers 
-and expect to grow to ~20 users in the first year. What should we do and why?"
+and expect to grow to ~2,000 users in the first year. What should we do and why?"
 ```
 
 ---
@@ -30,7 +30,7 @@ SECONDARY INTENTS:
 CONSTRAINTS IDENTIFIED:
   - Team size: 4 engineers (small)
   - Stage: Early (pre-launch or early launch)
-  - Scale expectation: ~20 users Y1 (very low)
+  - Scale expectation: ~2,000 users Y1 (modest — no hyperscale pressure)
   - Domain: B2B SaaS
 
 AMBIGUITIES:
@@ -63,7 +63,7 @@ UNCERTAINTIES:
 ```
 Key factors in this decision:
 1. Team size (4 engineers) → strongly favors simplicity
-2. 20 users Y1 → no scale pressure yet
+2. ~2,000 users Y1 → modest load, well within monolith territory
 3. SaaS = evolving requirements → need flexibility
 4. Microservices at this stage = massive operational overhead
    for 4 engineers (networking, deployment, service discovery, observability)
@@ -81,13 +81,13 @@ microservices risks → provide migration path → caveat on future decision poi
 
 ---
 
-**Go with a monolith — at least for now.** For a 4-person team targeting 20 users in year one, microservices would create far more complexity than value. Here's the full picture:
+**Go with a monolith — at least for now.** For a 4-person team targeting ~2,000 users in year one, microservices would create far more complexity than value. Here's the full picture:
 
 ### Why Monolith Wins at Your Stage
 
 **Team size is the deciding factor.** Microservices require significant operational infrastructure: service discovery, distributed tracing, inter-service networking, independent CI/CD pipelines, and container orchestration. Managing all of that meaningfully adds to every engineer's cognitive load — on a 4-person team, that overhead competes directly with building features.
 
-**Your scale doesn't demand it.** 20 users generates minimal infrastructure load. The core benefit of microservices — the ability to scale individual services independently — isn't relevant until you have scale problems worth solving. Optimizing for theoretical future scale before product-market fit is a common and costly mistake.
+**Your scale doesn't demand it.** A few thousand users generates modest infrastructure load that a well-built monolith handles without breaking a sweat. The core benefit of microservices — the ability to scale individual services independently — isn't relevant until you have scale problems worth solving. Optimizing for theoretical future scale before product-market fit is a common and costly mistake.
 
 **Speed of iteration matters more right now.** With a monolith, a developer can trace a request from HTTP handler to database query in one codebase, add a feature that spans multiple domains in a single PR, and deploy the whole thing with one pipeline. That velocity is critical in early-stage product development.
 
@@ -114,7 +114,7 @@ Consider moving toward microservices (or a modular "macroservices" approach) whe
 - Your team has grown to **10+ engineers** and coordination on a single repo becomes the bottleneck
 - A specific service needs **independent deployment cycles** for a justified reason
 
-At 20 users and 4 engineers, none of those conditions apply yet.
+At 4 engineers and a few thousand users, none of those conditions apply yet.
 
 ---
 
