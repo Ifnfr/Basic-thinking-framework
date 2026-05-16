@@ -53,6 +53,9 @@ Basic-thinking-framework/
     ├── bahasa-inggris/              ← Grammar, reading, vocabulary
     ├── bahasa-indonesia/            ← Linguistik, sastra, EYD, kelas kata
     └── _archive/                    ← Bahan yang sudah selesai
+└── materials/                       ← Study materials to discuss with the AI
+    ├── README.md
+    └── _template.md
 ```
 
 > The "Core / Modules / Templates / Examples" groupings above are **logical**, not directory-based. All files are at the repo root. The `materials/` folder is the only real subdirectory.
