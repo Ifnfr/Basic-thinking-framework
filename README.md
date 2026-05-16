@@ -41,12 +41,25 @@ Basic-thinking-framework/
 │   ├── PROBLEM_SOLVING.md           ← For debugging / troubleshooting
 │   └── RESEARCH_SYNTHESIS.md        ← For research & summarization
 │
-└── Examples
-    ├── example_complex_query.md
-    └── example_ambiguous_input.md
+├── Examples
+│   ├── example_complex_query.md
+│   └── example_ambiguous_input.md
+│
+└── materials/                       ← Study materials for AI-assisted learning
+    ├── README.md
+    ├── _template.md
+    ├── tka/                         ← Tes Kemampuan Akademik
+    ├── matematika-dasar/            ← Aljabar, geometri, statistika, kalkulus
+    ├── bahasa-inggris/              ← Grammar, reading, vocabulary
+    ├── bahasa-indonesia/            ← Linguistik, sastra, EYD, kelas kata
+    └── _archive/                    ← Bahan yang sudah selesai
 ```
 
-> The "Core / Modules / Templates / Examples" groupings above are **logical**, not directory-based. All files are at the repo root.
+> The "Core / Modules / Templates / Examples" groupings above are **logical**, not directory-based. All files are at the repo root. The `materials/` folder is the only real subdirectory.
+
+### About `materials/`
+
+A drop-zone for study materials you want to discuss with the AI. Upload a file there (via GitHub web), then reference it in chat — e.g. *"Bahas `materials/bahasa-indonesia/2026-05-16_kelas-kata.md`"*. See [`materials/README.md`](./materials/README.md) for conventions and supported formats.
 
 ---
 
