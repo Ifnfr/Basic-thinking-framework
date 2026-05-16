@@ -1,12 +1,16 @@
-# materials/
+# 📚 materials/
 
-Folder ini berfungsi sebagai **tempat penampungan bahan belajar** yang akan dibahas bersama AI (Kiro / Claude / model lain) dalam sesi *active recall* dan diskusi.
+Folder ini adalah **tempat penampungan bahan belajar** yang akan dibahas bersama AI (Kiro) dalam sesi active recall dan diskusi.
 
-Karena Kiro tidak bisa membaca file lokal yang diupload langsung di chat (terutama PDF/DOCX), workflow-nya menjadi:
+---
 
-1. Upload file bahan ke folder ini (lewat GitHub web atau git push)
-2. Sebut nama file-nya di chat Kiro
-3. Kiro akan membaca file dari repository dan membahasnya
+## Kenapa folder ini ada?
+
+Kiro tidak bisa membaca file yang kamu upload langsung di chat (PDF, DOCX, dll). Solusinya:
+
+1. **Simpan bahan di folder ini** (lewat GitHub web)
+2. **Sebut nama file di chat Kiro**
+3. **Kiro membaca file dari repo** dan langsung membahasnya
 
 ---
 
@@ -14,79 +18,58 @@ Karena Kiro tidak bisa membaca file lokal yang diupload langsung di chat (teruta
 
 ```
 materials/
-├── README.md           ← file ini
-├── linguistik/         ← contoh subfolder per topik
-├── _archive/           ← bahan yang sudah selesai dibahas
-└── <topik-lain>/       ← buat sesuai kebutuhan
+├── README.md               ← file ini
+├── tka/                    ← Tes Kemampuan Akademik (penalaran, logika, dll.)
+├── matematika-dasar/       ← Aljabar, geometri, statistika, kalkulus dasar
+├── bahasa-inggris/         ← Grammar, reading, vocabulary
+├── bahasa-indonesia/       ← Linguistik, sastra, EYD, kelas kata
+├── _archive/               ← Bahan yang sudah selesai dipelajari
+└── _template.md            ← Template untuk file bahan baru
 ```
-
-Konvensi:
-- **Satu subfolder per mata pelajaran / topik besar.** Contoh: `linguistik/`, `sejarah/`, `biologi/`.
-- **Pindahkan file ke `_archive/`** setelah selesai dipelajari, supaya folder utama tetap fokus pada bahan aktif.
-- **Penamaan file:** gunakan format `YYYY-MM-DD_topik-spesifik.md`, contoh: `2026-05-16_kelas-kata-utama.md`. Ini memudahkan pelacakan kronologis dan mendukung *spaced repetition*.
 
 ---
 
 ## Format file yang didukung
 
-| Format | Bisa dibaca AI? | Catatan |
-|---|---|---|
-| `.md`, `.txt` | ✓ | **Format utama yang direkomendasikan** |
-| `.json`, `.yaml`, `.csv` | ✓ | Cocok untuk data terstruktur / flashcard |
-| `.py`, `.js`, kode lain | ✓ | Untuk bahan pemrograman |
-| `.png`, `.jpg`, `.jpeg`, `.webp` | ✓ | Foto papan tulis, slide, catatan tangan |
-| `.pdf` | ✗ | **Harus dikonversi ke `.md` atau `.txt` lebih dulu** |
-| `.docx`, `.pptx` | ✗ | Harus dikonversi |
-
-> Tips: kalau bahan asalnya PDF/PPT, copy-paste isinya ke file `.md` baru. Atau minta AI bantu merangkumnya saat upload pertama.
+| Format | Bisa dibaca? | Catatan |
+|--------|:---:|---------|
+| `.md` | ✅ | **Paling direkomendasikan** |
+| `.txt` | ✅ | Plain text, tanpa formatting |
+| `.json`, `.csv` | ✅ | Cocok untuk data / flashcard |
+| `.png`, `.jpg`, `.jpeg`, `.webp` | ✅ | Foto slide, papan tulis, catatan tangan |
+| `.pdf` | ❌ | Harus copy-paste isinya ke `.md` dulu |
+| `.docx`, `.pptx` | ❌ | Harus dikonversi |
 
 ---
 
-## Template file bahan
+## Konvensi penamaan file
 
-Untuk konsistensi, gunakan template di `materials/_template.md` saat menambah bahan baru.
+```
+YYYY-MM-DD_topik-spesifik.md
+```
 
-Struktur minimum yang disarankan:
+Contoh:
+- `2026-05-16_kelas-kata-utama.md`
+- `2026-05-17_silogisme-dan-penalaran.md`
+- `2026-05-18_tenses-overview.md`
+- `2026-05-19_limit-fungsi.md`
 
-```markdown
-# <Judul Bahan>
+---
 
-**Sumber:** <buku / slide kuliah / video / dst.>
-**Tanggal upload:** YYYY-MM-DD
-**Status:** belajar / review / arsip
+## Cara memanggil di chat Kiro
 
-## Ringkasan
-<Satu paragraf inti dari bahan ini>
-
-## Konsep kunci
-- <konsep 1>
-- <konsep 2>
-
-## Isi bahan
-<konten lengkap di sini>
-
-## Pertanyaan terbuka
-- <hal yang belum dipahami>
+```
+"Bahas materials/bahasa-indonesia/2026-05-16_kelas-kata-utama.md"
+"Buatkan soal active recall dari materials/tka/2026-05-17_silogisme.md"
+"Jelaskan konsep di materials/matematika-dasar/2026-05-19_limit-fungsi.md"
 ```
 
 ---
 
-## Cara memanggil bahan di chat Kiro
+## Workflow belajar
 
-Pilih salah satu format ini saat memulai sesi:
-
-- *"Bahas bahan di `materials/linguistik/2026-05-16_kelas-kata-utama.md`."*
-- *"Buatkan soal active recall dari `materials/biologi/sel.md`."*
-- *"Bandingkan isi `materials/linguistik/<file-A>.md` dengan `<file-B>.md`."*
-
-Kiro akan langsung membaca file tersebut dari repository.
-
----
-
-## Workflow yang disarankan
-
-1. **Sebelum sesi belajar:** upload bahan ke folder yang sesuai
-2. **Selama sesi:** minta penjelasan, soal recall, atau diskusi
-3. **Setelah sesi:** tambahkan catatan reflektif di bagian bawah file (apa yang sudah paham, apa yang masih lemah)
-4. **Review berkala:** kembali ke file yang sama dalam interval 1 hari, 3 hari, 7 hari (spaced repetition)
-5. **Arsipkan:** pindahkan ke `_archive/` saat materi sudah dikuasai
+1. **Upload** bahan ke subfolder yang sesuai
+2. **Chat Kiro** — minta penjelasan, soal recall, atau diskusi
+3. **Catat** hasil sesi di bagian bawah file (apa yang paham, apa yang lemah)
+4. **Review** di interval 1 hari → 3 hari → 7 hari (spaced repetition)
+5. **Arsipkan** — pindahkan ke `_archive/` setelah materi dikuasai

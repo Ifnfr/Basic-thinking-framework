@@ -1,33 +1,40 @@
-# <Judul Bahan>
+# [Judul Bahan]
 
-**Sumber:** <buku / slide kuliah / video / website / dll.>
+**Mata pelajaran:** TKA / Matematika Dasar / Bahasa Inggris / Bahasa Indonesia
+**Sumber:** [buku / slide kuliah / video / website]
 **Tanggal upload:** YYYY-MM-DD
-**Status:** belajar | review | arsip
-**Topik:** <misal: linguistik, sejarah, biologi>
+**Status:** 🟡 belajar | 🔵 review | ✅ selesai
 
 ---
 
 ## Ringkasan singkat
-<Satu paragraf inti dari bahan ini — tulis dari ingatanmu sendiri kalau bisa, untuk efek generation>
+
+> Tulis 1–3 kalimat inti dari bahan ini. Kalau bisa, tulis dari ingatan sendiri (generation effect).
+
+---
 
 ## Konsep kunci
-- <konsep 1>
-- <konsep 2>
-- <konsep 3>
+
+- Konsep 1
+- Konsep 2
+- Konsep 3
 
 ---
 
 ## Isi bahan
 
-<Konten lengkap di sini. Boleh copy-paste dari sumber, boleh ringkasan sendiri.
-Kalau dari PDF/slide, salin teksnya. Kalau ada gambar/diagram penting, simpan
-sebagai file terpisah di subfolder yang sama lalu link di sini:
-![diagram](nama-gambar.png)>
+<!-- 
+Paste konten lengkap di sini.
+Kalau dari PDF/slide: copy-paste teksnya.
+Kalau ada gambar penting: simpan di folder yang sama, lalu link:
+![deskripsi](nama-gambar.png)
+-->
 
 ---
 
 ## Pertanyaan terbuka
-<Hal-hal yang belum kamu pahami atau ingin diskusikan dengan AI>
+
+<!-- Hal-hal yang belum dipahami atau ingin didiskusikan dengan AI -->
 
 - 
 - 
@@ -37,18 +44,18 @@ sebagai file terpisah di subfolder yang sama lalu link di sini:
 ## Catatan sesi
 
 ### Sesi 1 — YYYY-MM-DD
-- Apa yang sudah dipahami:
-- Apa yang masih lemah:
-- Soal recall yang gagal dijawab:
+- Dipahami:
+- Masih lemah:
+- Soal recall yang gagal:
 
 ### Sesi 2 — YYYY-MM-DD (review)
 - 
 
 ---
 
-## Status retrieval
+## Checklist retrieval
 
-- [ ] Free recall (tanpa cue) — bisa menjelaskan ulang dari nol
-- [ ] Cued recall — bisa menjawab pertanyaan dengan petunjuk
-- [ ] Application — bisa menerapkan ke kasus baru
-- [ ] Teaching — bisa menjelaskan ke orang lain
+- [ ] Free recall — bisa jelaskan ulang tanpa cue
+- [ ] Cued recall — bisa jawab pertanyaan dengan petunjuk
+- [ ] Application — bisa terapkan ke soal baru
+- [ ] Teaching — bisa jelaskan ke orang lain
